@@ -37,6 +37,7 @@ class Pokemon {
         this.backImage = backImage;
     }
 }
+let counter = 0;
 
 function createPokemon(pokemon) {
     console.log('ajax');
@@ -98,7 +99,7 @@ function createPokemon(pokemon) {
                         } else {};
                         let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card large">
 						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="${ashKetchum.pokemon[i].pic}">
+						  <img class="activator" src="${ashKetchum.pokemon[i].frontImage}">
 						</div>
 						<div class="card-content">
 						  <span class="card-title activator grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
@@ -109,6 +110,9 @@ function createPokemon(pokemon) {
                           <p>hp: ${ashKetchum.pokemon[i].stats.hp} <br> attack: ${ashKetchum.pokemon[i].stats.attck} <br> defense: ${ashKetchum.pokemon[i].stats.dfns} <br> speed: ${ashKetchum.pokemon[i].stats.spd} <br></p>
 						  <p>Abilities</p>
                           <p>${ashKetchum.pokemon[i].abilities.join(", ")}</p>
+                          <div>
+                          <img src="${ashKetchum.pokemon[i].backImage}">
+                          </div>
 						</div>
 					  </div>
 					  </div>`;

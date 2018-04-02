@@ -41,7 +41,7 @@ class Pokemon {
 function createPokemon(pokemon) {
     console.log('ajax');
     $.ajax({
-        url: `https://pokeapi.co/api/v2/pokemon/${pokemon}/`,
+        url: `http://pokeapi.salestock.net/api/v2/pokemon/${pokemon}/`,
         type: "GET",
         dataType: "JSON",
         success: function(data) {
@@ -76,15 +76,15 @@ function createPokemon(pokemon) {
             }
             // name, stats, abilities, frontImage, backImage
             // move pokemon object to trainer
-            title = new Pokemon(name, stat, pic1, abil);
+            title = new Pokemon(name, stat, abil, pic1, pic2);
             ashKetchum.pokemon.push(title);
-            ashKetchum.get(title);
+            ashKetchum.getPokemon(title);
             counter++;
             let futureRef = ["#one!", "#two!", "#three!", "#four!", "#five!", "#six!", "#seven!", "#eight!", "#nine!", "#ten!", "#eleven!", "#twelve!"];
 
             //waits for ajax to finish, then manipulate DOM
             if (counter === 3) {
-                ashKetchum.all();
+                ashKetchum.allPokemon();
                 console.log(ashKetchum);
                 let render = function() {
                     for (let i = 0; i < ashKetchum.pokemon.length; i++) {

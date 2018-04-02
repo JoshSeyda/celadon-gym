@@ -38,11 +38,12 @@ class Pokemon {
         this.backImage = backImage;
     }
 }
+let counter = 0;
 
 function createPokemon(pokemon) {
     console.log('ajax');
     $.ajax({
-        url: `https://pokeapi.co/api/v2/pokemon/${pokemon}/`,
+        url: `http://pokeapi.salestock.net/api/v2/pokemon/${pokemon}/`,
         type: "GET",
         dataType: "JSON",
         success: function(data) {
@@ -77,15 +78,15 @@ function createPokemon(pokemon) {
             }
             // name, stats, abilities, frontImage, backImage
             // move pokemon object to trainer
-            title = new Pokemon(name, stat, pic1, abil);
+            title = new Pokemon(name, stat, abil, pic1, pic2);
             batman.pokemon.push(title);
-            batman.get(title);
+            batman.getPokemon(title);
             counter++;
             let futureRef = ["#one!", "#two!", "#three!", "#four!", "#five!", "#six!", "#seven!", "#eight!", "#nine!", "#ten!", "#eleven!", "#twelve!"];
 
             //waits for ajax to finish, then manipulate DOM
             if (counter === 3) {
-                batman.all();
+                batman.allPokemon();
                 console.log(batman);
                 let render = function() {
                     for (let i = 0; i < batman.pokemon.length; i++) {
@@ -99,7 +100,7 @@ function createPokemon(pokemon) {
                         } else {};
                         let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card large">
 						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="${batman.pokemon[i].pic}">
+						  <img class="activator" src="${batman.pokemon[i].frontImage}">
 						</div>
 						<div class="card-content">
 						  <span class="card-title activator grey-text text-darken-4">${batman.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
@@ -109,7 +110,10 @@ function createPokemon(pokemon) {
 						 	<p>Stats</p> 
                           <p>hp: ${batman.pokemon[i].stats.hp} <br> attack: ${batman.pokemon[i].stats.attck} <br> defense: ${batman.pokemon[i].stats.dfns} <br> speed: ${batman.pokemon[i].stats.spd} <br></p>
 						  <p>Abilities</p>
-						  <p>${batman.pokemon[i].abilities.join(", ")}</p>
+                          <p>${batman.pokemon[i].abilities.join(", ")}</p>
+                          <div>
+                          <img src="${batman.pokemon[i].backImage}">
+                          </div>
 						</div>
 					  </div>
 					  </div>`;

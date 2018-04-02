@@ -24,18 +24,15 @@ class Trainer {
     }
 }
 
-// My Trainer name is Batman
-let batman = new Trainer(); // class
+// Our Trainers are Batman && Ash Ketchum
+let ashKetchum = new Trainer(); // class
 
 // Class Pokemon holds information
 class Pokemon {
-    constructor(name, hp, attack, defense, abilities1, abilities2, frontImage, backImage) {
+    constructor(name, stats, abilities, frontImage, backImage) {
         this.name = name;
-        this.hp = hp;
-        this.attack = attack;
-        this.defense = defense;
-        this.abilities1 = abilities1;
-        this.abilities2 = abilities2;
+        this.stats = stats;
+        this.abilities = abilities;
         this.frontImage = frontImage;
         this.backImage = backImage;
     }
@@ -52,7 +49,8 @@ function createPokemon(pokemon) {
             //link datapoints to variables
             let name = data.name,
                 title = data.name,
-                pic = data.sprites.front_default,
+                pic1 = data.sprites.front_default,
+                pic2 = data.sprites.back_default,
                 xP = data.base_experience,
                 stat = {},
                 abil = [],
@@ -76,20 +74,20 @@ function createPokemon(pokemon) {
                 let ability = data.abilities[i].ability.name;
                 abil.push(`${ability}`);
             }
-
+            // name, stats, abilities, frontImage, backImage
             // move pokemon object to trainer
-            title = new Pokemon(name, pic, stat, abil);
-            pokemonTrainer.pokemon.push(title);
-            pokemonTrainer.get(title);
+            title = new Pokemon(name, stat, pic1, abil);
+            ashKetchum.pokemon.push(title);
+            ashKetchum.get(title);
             counter++;
             let futureRef = ["#one!", "#two!", "#three!", "#four!", "#five!", "#six!", "#seven!", "#eight!", "#nine!", "#ten!", "#eleven!", "#twelve!"];
 
             //waits for ajax to finish, then manipulate DOM
             if (counter === 3) {
-                pokemonTrainer.all();
-                console.log(pokemonTrainer);
+                ashKetchum.all();
+                console.log(ashKetchum);
                 let render = function() {
-                    for (let i = 0; i < pokemonTrainer.pokemon.length; i++) {
+                    for (let i = 0; i < ashKetchum.pokemon.length; i++) {
                         let reference;
                         if (i === 0) {
                             reference = futureRef[i];
@@ -100,17 +98,17 @@ function createPokemon(pokemon) {
                         } else {};
                         let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card large">
 						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="${pokemonTrainer.pokemon[i].pic}">
+						  <img class="activator" src="${ashKetchum.pokemon[i].pic}">
 						</div>
 						<div class="card-content">
-						  <span class="card-title activator grey-text text-darken-4">${pokemonTrainer.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
+						  <span class="card-title activator grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
 						</div>
 						<div class="card-reveal">
-						  <span class="card-title grey-text text-darken-4">${pokemonTrainer.pokemon[i].name}<i class="material-icons right">close</i></span>
+						  <span class="card-title grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right">close</i></span>
 						 	<p>Stats</p> 
-						  <p>${pokemonTrainer.pokemon[i].statsRender()}</p>
+                          <p>hp: ${ashKetchum.pokemon[i].stats.hp} <br> attack: ${ashKetchum.pokemon[i].stats.attck} <br> defense: ${ashKetchum.pokemon[i].stats.dfns} <br> speed: ${ashKetchum.pokemon[i].stats.spd} <br></p>
 						  <p>Abilities</p>
-						  <p>${pokemonTrainer.pokemon[i].abilitiesRender()}</p>
+                          <p>${ashKetchum.pokemon[i].abilities.join(", ")}</p>
 						</div>
 					  </div>
 					  </div>`;
@@ -121,38 +119,6 @@ function createPokemon(pokemon) {
                 }
                 render();
                 $('.carousel').carousel();
-            }
-            if (counter > 3) {
-                let index = pokemonTrainer.pokemon.length - 1;
-                console.log(index);
-                console.log(futureRef[index]);
-                let render = function() {
-                    let card = `<div class="carousel-item z-depth-5" href="${futureRef[index]}"><div class="card large">
-                        <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="${pokemonTrainer.pokemon[index].pic}">
-                        </div>
-                        <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">${pokemonTrainer.pokemon[index].name}<i class="material-icons right small">insert_chart</i></span>
-                        </div>
-                        <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">${pokemonTrainer.pokemon[index].name}<i class="material-icons right">close</i></span>
-                            <p>Stats</p> 
-                        <p>${pokemonTrainer.pokemon[index].statsRender()}</p>
-                        <p>Abilities</p>
-                        <p>${pokemonTrainer.pokemon[index].abilitiesRender()}</p>
-                        </div>
-                        </div>
-                        </div>`;
-
-                    $('.carousel').append(card);
-                }
-                render();
-                $('.carousel').carousel({
-                    numVisible: pokemonTrainer.pokemon.length
-                });
-                let elem = $('.carousel');
-                let instance = M.Carousel.getInstance(elem);
-                instance.set(index);
             }
         },
         error: function(error) {

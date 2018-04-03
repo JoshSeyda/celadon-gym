@@ -127,7 +127,7 @@ function createPokemon(pokemon) {
                 console.log(index);
                 console.log(futureRef[index]);
                 let render = function() {
-                        let card = `<div class="carousel-item z-depth-5" href="${futureRef[index]}"><div class="card large">
+                        let card = `<div class="carousel-item z-depth-5" href="${futureRef[index]}"><div class="card">
                         <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="${ashKetchum.pokemon[index].frontImage}">
                         </div>

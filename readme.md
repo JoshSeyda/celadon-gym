@@ -5,7 +5,7 @@
 ## Motivation
 ######  This dynamically generated Page was created in collaboration with Mashal Azhar as a project for our New York Code + Design Academy Web Development bootcamp. We were tasked with accessing an open source Pokémon API, generating a page with that data, implementing ES6 class structure in our JavaScript, utilizing Materialize styling elements, and writing our own stylings with a SASS/SCSS compiler. After submitting individual projects, we paired up to integrate our code, using aspects of each others projects to make a new combined page through GitHub as our medium of exchange. 
 ## Build Status
-###### We are currently developing our Minimum Viable Product. 
+###### We are currently deploying our Minimum Viable Product. Mashal arranged the HTML and CSS as a combination of our previous page's styling and structures, and created new features and layouts. Josh combined Mashal's class structures with his Ajax and DOM manipulation structure to implement the dynamic functionality of the website. 
 ## Code Style
 ###### We took Mashal's class structure, and Josh's Ajax function to make two nearly identical javascript files,for seperate trainer pages. 
 ## Technology Used

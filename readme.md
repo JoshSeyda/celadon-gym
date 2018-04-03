@@ -17,7 +17,7 @@
 ## Licence
 ##### MIT License
 
-###### Copyright &copy; [2018] [Joshua Seyda]
+###### Copyright &copy; [2018] [Mashal Azhar & Joshua Seyda]
 
 ###### Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -42,7 +42,7 @@ let counter = 0;
 function createPokemon(pokemon) {
     console.log('ajax');
     $.ajax({
-        url: `http://pokeapi.salestock.net/api/v2/pokemon/${pokemon}/`,
+        url: `https://pokeapi.co/api/v2/pokemon/${pokemon}/`,
         type: "GET",
         dataType: "JSON",
         success: function(data) {
@@ -97,7 +97,7 @@ function createPokemon(pokemon) {
                         } else if (i === 2) {
                             reference = futureRef[i];
                         } else {};
-                        let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card large">
+                        let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card">
 						<div class="card-image waves-effect waves-block waves-light">
 						  <img class="activator" src="${ashKetchum.pokemon[i].frontImage}">
 						</div>

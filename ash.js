@@ -143,7 +143,6 @@ function createPokemon(pokemon) {
                         </div>
                         </div>
                         </div>`;
-
                         $('.carousel').append(card);
                         $('.carousel').carousel();
                     }

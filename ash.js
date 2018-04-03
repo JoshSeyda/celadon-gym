@@ -5,13 +5,11 @@ class Trainer {
         }
         //Gets pokemon based on its name along with stats
     getPokemon(name) {
-            // console.log(this.pokemon)
             let found = this.pokemon.find(function(element) {
                 if (element.name == name) {
                     return true;
                 }
             });
-            // console.log(found)
             return found;
         }
         //Returns pokemon with its abilities and stats
@@ -25,8 +23,7 @@ class Trainer {
 }
 
 // Our Trainers are Batman && Ash Ketchum
-let ashKetchum = new Trainer(); // class
-
+let ashKetchum = new Trainer();
 // Class Pokemon holds information
 class Pokemon {
     constructor(name, stats, abilities, frontImage, backImage) {
@@ -42,12 +39,12 @@ let counter = 0;
 function createPokemon(pokemon) {
     console.log('ajax');
     $.ajax({
-        url: `https://pokeapi.co/api/v2/pokemon/${pokemon}/`,
+        url: `http://pokeapi.salestock.net/api/v2/pokemon/${pokemon}/`,
         type: "GET",
         dataType: "JSON",
         success: function(data) {
             console.log('test');
-            //link datapoints to variables
+            //Link datapoints to variables
             let name = data.name,
                 title = data.name,
                 pic1 = data.sprites.front_default,
@@ -64,30 +61,30 @@ function createPokemon(pokemon) {
                 spd = data.stats[0].stat.name,
                 spdLvl = data.stats[0].base_stat;
 
-            //set the stat object
+            //Set the stat object
             stat.hp = hpLvl;
             stat.attck = attckLvl;
             stat.dfns = dfnsLVL;
             stat.spd = spdLvl;
 
-            //set the ability array
+            //Set the ability array
             for (i = 0; i < data.abilities.length; i++) {
                 let ability = data.abilities[i].ability.name;
                 abil.push(`${ability}`);
             }
-            // name, stats, abilities, frontImage, backImage
-            // move pokemon object to trainer
+            // Move pokemon object to trainer
             title = new Pokemon(name, stat, abil, pic1, pic2);
             ashKetchum.pokemon.push(title);
             ashKetchum.getPokemon(title);
             counter++;
             let futureRef = ["#one!", "#two!", "#three!", "#four!", "#five!", "#six!", "#seven!", "#eight!", "#nine!", "#ten!", "#eleven!", "#twelve!"];
 
-            //waits for ajax to finish, then manipulate DOM
+            //Waits for ajax to finish, then manipulate DOM
             if (counter === 3) {
                 ashKetchum.allPokemon();
                 console.log(ashKetchum);
                 let render = function() {
+                    // For loop to set href for carousel
                     for (let i = 0; i < ashKetchum.pokemon.length; i++) {
                         let reference;
                         if (i === 0) {
@@ -97,21 +94,22 @@ function createPokemon(pokemon) {
                         } else if (i === 2) {
                             reference = futureRef[i];
                         } else {};
+                        // Creation of html card for carousel 
                         let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="${ashKetchum.pokemon[i].frontImage}">
-						</div>
-						<div class="card-content">
-						  <span class="card-title activator grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
-						</div>
-						<div class="card-reveal">
-						  <span class="card-title grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right">close</i></span>
-						 	<p>Stats</p> 
-                          <p>hp: ${ashKetchum.pokemon[i].stats.hp} <br> attack: ${ashKetchum.pokemon[i].stats.attck} <br> defense: ${ashKetchum.pokemon[i].stats.dfns} <br> speed: ${ashKetchum.pokemon[i].stats.spd} <br></p>
-						  <p>Abilities</p>
-                          <p>${ashKetchum.pokemon[i].abilities.join(", ")}</p>
-                          <div>
-                          <img src="${ashKetchum.pokemon[i].backImage}">
+						    <div class="card-image waves-effect waves-block waves-light">
+						    <img class="activator" src="${ashKetchum.pokemon[i].frontImage}">
+						    </div>
+						    <div class="card-content">
+						    <span class="card-title activator grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
+						    </div>
+					    	<div class="card-reveal">
+					        <span class="card-title grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right">close</i></span>
+				    	    <p>Stats</p> 
+                            <p>hp: ${ashKetchum.pokemon[i].stats.hp} <br> attack: ${ashKetchum.pokemon[i].stats.attck} <br> defense: ${ashKetchum.pokemon[i].stats.dfns} <br> speed: ${ashKetchum.pokemon[i].stats.spd} <br></p>
+				        	<p>Abilities</p>
+                            <p>${ashKetchum.pokemon[i].abilities.join(", ")}</p>
+                            <div>
+                            <img src="${ashKetchum.pokemon[i].backImage}">
                           </div>
 						</div>
 					  </div>
@@ -122,7 +120,13 @@ function createPokemon(pokemon) {
                     }
                 }
                 render();
-                $('.carousel').carousel();
+                // Implementation of carousel functionality
+                $('.carousel').carousel({
+                    numVisible: ashKetchum.pokemon.length
+                });
+                let elem = $('.carousel');
+                let instance = M.Carousel.getInstance(elem);
+                instance.set(index);
             }
         },
         error: function(error) {
@@ -133,3 +137,12 @@ function createPokemon(pokemon) {
 createPokemon('nidoking');
 createPokemon('haunter');
 createPokemon('mewtwo');
+// Search function controls
+$(document).ready(function() {
+    $('form').on('submit', function() {
+        event.preventDefault();
+        let name = $('input[type=search]').val();
+        console.log(name);
+        createPokemon(name);
+    });
+});

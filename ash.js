@@ -116,7 +116,7 @@ function createPokemon(pokemon) {
 					  </div>`;
 
                             $('.carousel').append(card);
-
+                            $('.carousel').carousel();
                         }
                     }
                     // Render for initial set of pokemon
@@ -144,7 +144,6 @@ function createPokemon(pokemon) {
                         </div>
                         </div>`;
                         $('.carousel').append(card);
-                        $('.carousel').carousel();
                     }
                     // Render for additional pokemon
                 render();

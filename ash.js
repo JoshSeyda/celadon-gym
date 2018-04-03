@@ -42,7 +42,7 @@ let counter = 0;
 function createPokemon(pokemon) {
     console.log('ajax');
     $.ajax({
-        url: `https://pokeapi.co/api/v2/pokemon/${pokemon}/`,
+        url: `http://pokeapi.salestock.net/api/v2/pokemon/${pokemon}/`,
         type: "GET",
         dataType: "JSON",
         success: function(data) {
@@ -88,6 +88,7 @@ function createPokemon(pokemon) {
                 ashKetchum.allPokemon();
                 console.log(ashKetchum);
                 let render = function() {
+                    // for loop to set href for carousel
                     for (let i = 0; i < ashKetchum.pokemon.length; i++) {
                         let reference;
                         if (i === 0) {
@@ -97,21 +98,22 @@ function createPokemon(pokemon) {
                         } else if (i === 2) {
                             reference = futureRef[i];
                         } else {};
+                        // creation of html card for carousel 
                         let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="${ashKetchum.pokemon[i].frontImage}">
-						</div>
-						<div class="card-content">
-						  <span class="card-title activator grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
-						</div>
-						<div class="card-reveal">
-						  <span class="card-title grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right">close</i></span>
-						 	<p>Stats</p> 
-                          <p>hp: ${ashKetchum.pokemon[i].stats.hp} <br> attack: ${ashKetchum.pokemon[i].stats.attck} <br> defense: ${ashKetchum.pokemon[i].stats.dfns} <br> speed: ${ashKetchum.pokemon[i].stats.spd} <br></p>
-						  <p>Abilities</p>
-                          <p>${ashKetchum.pokemon[i].abilities.join(", ")}</p>
-                          <div>
-                          <img src="${ashKetchum.pokemon[i].backImage}">
+						    <div class="card-image waves-effect waves-block waves-light">
+						    <img class="activator" src="${ashKetchum.pokemon[i].frontImage}">
+						    </div>
+						    <div class="card-content">
+						    <span class="card-title activator grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
+						    </div>
+					    	<div class="card-reveal">
+					        <span class="card-title grey-text text-darken-4">${ashKetchum.pokemon[i].name}<i class="material-icons right">close</i></span>
+				    	    <p>Stats</p> 
+                            <p>hp: ${ashKetchum.pokemon[i].stats.hp} <br> attack: ${ashKetchum.pokemon[i].stats.attck} <br> defense: ${ashKetchum.pokemon[i].stats.dfns} <br> speed: ${ashKetchum.pokemon[i].stats.spd} <br></p>
+				        	<p>Abilities</p>
+                            <p>${ashKetchum.pokemon[i].abilities.join(", ")}</p>
+                            <div>
+                            <img src="${ashKetchum.pokemon[i].backImage}">
                           </div>
 						</div>
 					  </div>
@@ -122,7 +124,13 @@ function createPokemon(pokemon) {
                     }
                 }
                 render();
-                $('.carousel').carousel();
+                // implementation of carousel functionality
+                $('.carousel').carousel({
+                    numVisible: ashKetchum.pokemon.length
+                });
+                let elem = $('.carousel');
+                let instance = M.Carousel.getInstance(elem);
+                instance.set(index);
             }
         },
         error: function(error) {
@@ -133,3 +141,12 @@ function createPokemon(pokemon) {
 createPokemon('nidoking');
 createPokemon('haunter');
 createPokemon('mewtwo');
+// 
+$(document).ready(function() {
+    $('form').on('submit', function() {
+        event.preventDefault();
+        let name = $('input[type=search]').val();
+        console.log(name);
+        createPokemon(name);
+    });
+});

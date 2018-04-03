@@ -167,6 +167,7 @@ function createPokemon(pokemon) {
 createPokemon('nidoking');
 createPokemon('haunter');
 createPokemon('mewtwo');
+
 // Search function controls
 $(document).ready(function() {
     $('form').on('submit', function() {

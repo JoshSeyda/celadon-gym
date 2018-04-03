@@ -121,7 +121,12 @@ function createPokemon(pokemon) {
                     }
                 }
                 render();
-                $('.carousel').carousel();
+                $('.carousel').carousel({
+                    numVisible: batman.pokemon.length;
+                });
+                let elem = $('.carousel');
+                let instance = M.Carousel.getInstance(elem);
+                instance.set(index);
             }
         },
         error: function(error) {
@@ -132,3 +137,12 @@ function createPokemon(pokemon) {
 createPokemon('squirtle');
 createPokemon('wartortle');
 createPokemon('blastoise');
+
+$(document).ready(function() {
+    $('form').on('submit', function() {
+        event.preventDefault();
+        let name = $('input[type=search]').val();
+        console.log(name);
+        createPokemon(name);
+    });
+});

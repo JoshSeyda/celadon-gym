@@ -5,13 +5,11 @@ class Trainer {
         }
         //Gets pokemon based on its name along with stats
     getPokemon(name) {
-            // console.log(this.pokemon)
             let found = this.pokemon.find(function(element) {
                 if (element.name == name) {
                     return true;
                 }
             });
-            // console.log(found)
             return found;
         }
         //Returns pokemon with its abilities and stats
@@ -25,7 +23,7 @@ class Trainer {
 }
 
 // Our Trainers are Batman && Ash Ketchum
-let batman = new Trainer(); // class
+let batman = new Trainer();
 
 
 // Class Pokemon holds information
@@ -48,7 +46,7 @@ function createPokemon(pokemon) {
         dataType: "JSON",
         success: function(data) {
             console.log('test');
-            //link datapoints to variables
+            //Link datapoints to variables
             let name = data.name,
                 title = data.name,
                 pic1 = data.sprites.front_default,
@@ -65,31 +63,30 @@ function createPokemon(pokemon) {
                 spd = data.stats[0].stat.name,
                 spdLvl = data.stats[0].base_stat;
 
-            //set the stat object
+            //Set the stat object
             stat.hp = hpLvl;
             stat.attck = attckLvl;
             stat.dfns = dfnsLVL;
             stat.spd = spdLvl;
 
-            //set the ability array
+            //Set the ability array
             for (i = 0; i < data.abilities.length; i++) {
                 let ability = data.abilities[i].ability.name;
                 abil.push(`${ability}`);
             }
-            // name, stats, abilities, frontImage, backImage
-            // move pokemon object to trainer
+            // Move pokemon object to trainer
             title = new Pokemon(name, stat, abil, pic1, pic2);
             batman.pokemon.push(title);
             batman.getPokemon(title);
             counter++;
             let futureRef = ["#one!", "#two!", "#three!", "#four!", "#five!", "#six!", "#seven!", "#eight!", "#nine!", "#ten!", "#eleven!", "#twelve!"];
 
-            //waits for ajax to finish, then manipulate DOM
+            //Waits for ajax to finish, then manipulate DOM
             if (counter === 3) {
                 batman.allPokemon();
                 console.log(batman);
                 let render = function() {
-                    // for loop to set href for carousel
+                    // For loop to set href to carousel-items
                     for (let i = 0; i < batman.pokemon.length; i++) {
                         let reference;
                         if (i === 0) {
@@ -123,7 +120,7 @@ function createPokemon(pokemon) {
                     }
                 }
                 render();
-                // implementation of carousel functionality
+                // Implementation of carousel functionality
                 $('.carousel').carousel({
                     numVisible: batman.pokemon.length
                 });
@@ -140,7 +137,7 @@ function createPokemon(pokemon) {
 createPokemon('squirtle');
 createPokemon('wartortle');
 createPokemon('blastoise');
-
+// Search function controls
 $(document).ready(function() {
     $('form').on('submit', function() {
         event.preventDefault();

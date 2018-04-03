@@ -1,0 +1,377 @@
+Last login: Mon Apr  2 10:22:56 on ttys000
+Mashals-MacBook-Pro:~ Mishi$ cd desktop
+Mashals-MacBook-Pro:desktop Mishi$ cd wdf
+Mashals-MacBook-Pro:wdf Mishi$ cd "graded projects
+> "
+-bash: cd: graded projects
+: No such file or directory
+Mashals-MacBook-Pro:wdf Mishi$ cd "graded projects"
+Mashals-MacBook-Pro:graded projects Mishi$ cd github-collab
+Mashals-MacBook-Pro:github-collab Mishi$ cd pokemongym-master
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git init
+Initialized empty Git repository in /Users/Mishi/Desktop/WDF/Graded Projects/github-collab/pokemonGym-master/.git/
+Mashals-MacBook-Pro:pokemongym-master Mishi$ ls -a
+.		.git		main.js
+..		index.html	style.css
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git branch mashal
+fatal: Not a valid object name: 'master'.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git checkout -b mashal
+Switched to a new branch 'mashal'
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git checkout mashal
+error: pathspec 'mashal' did not match any file(s) known to git.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git push origin mashal
+error: src refspec mashal does not match any.
+error: failed to push some refs to 'origin'
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git branch
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git branch mashal
+fatal: Not a valid object name: 'mashal'.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git checkout mashal
+error: pathspec 'mashal' did not match any file(s) known to git.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git branch
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git push origin mashal
+error: src refspec mashal does not match any.
+error: failed to push some refs to 'origin'
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git branch hello
+fatal: Not a valid object name: 'mashal'.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git checkout "hello"
+error: pathspec 'hello' did not match any file(s) known to git.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ ls -a
+.		.git		main.js
+..		index.html	style.css
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git init
+Reinitialized existing Git repository in /Users/Mishi/Desktop/WDF/Graded Projects/github-collab/pokemonGym-master/.git/
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git add remote origin 
+fatal: pathspec 'remote' did not match any files
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git remote add origin https://github.com/JoshSeyda/pokemonGym.git
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git branch masha
+fatal: Not a valid object name: 'mashal'.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git branch
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git branch mashal
+fatal: Not a valid object name: 'mashal'.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git branch master
+fatal: Not a valid object name: 'mashal'.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git checkout -b mashal
+Switched to a new branch 'mashal'
+Mashals-MacBook-Pro:pokemongym-master Mishi$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git.
+Mashals-MacBook-Pro:pokemongym-master Mishi$ clear
+
+Mashals-MacBook-Pro:pokemongym-master Mishi$ cd .. 
+Mashals-MacBook-Pro:.Trash Mishi$ cd .. 
+Mashals-MacBook-Pro:~ Mishi$ cd desktop
+Mashals-MacBook-Pro:desktop Mishi$ cd wdf
+Mashals-MacBook-Pro:wdf Mishi$ cd "graded projects"
+Mashals-MacBook-Pro:graded projects Mishi$ cd github-collab
+Mashals-MacBook-Pro:github-collab Mishi$ ls -la
+total 16
+drwxr-xr-x  3 Mishi  staff    96 Apr  2 15:54 .
+drwxr-xr-x  6 Mishi  staff   192 Apr  2 15:43 ..
+-rw-r--r--@ 1 Mishi  staff  6148 Apr  2 15:54 .DS_Store
+Mashals-MacBook-Pro:github-collab Mishi$ git clone https://github.com/JoshSeyda/pokemonGym.git
+Cloning into 'pokemonGym'...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Mashals-MacBook-Pro:github-collab Mishi$ git checkout master
+fatal: Not a git repository (or any of the parent directories): .git
+Mashals-MacBook-Pro:github-collab Mishi$ git pull origin master
+fatal: Not a git repository (or any of the parent directories): .git
+Mashals-MacBook-Pro:github-collab Mishi$ cd pokemongym
+Mashals-MacBook-Pro:pokemongym Mishi$ git checkout origin master
+error: pathspec 'master' did not match any file(s) known to git.
+Mashals-MacBook-Pro:pokemongym Mishi$ git branch 
+* master
+Mashals-MacBook-Pro:pokemongym Mishi$ git branch mashal
+Mashals-MacBook-Pro:pokemongym Mishi$ git checkout
+Your branch is up-to-date with 'origin/master'.
+Mashals-MacBook-Pro:pokemongym Mishi$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working tree clean
+Mashals-MacBook-Pro:pokemongym Mishi$ git checkout mashal
+Switched to branch 'mashal'
+Mashals-MacBook-Pro:pokemongym Mishi$ git branch
+* mashal
+  master
+Mashals-MacBook-Pro:pokemongym Mishi$ git push origin mashal
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/JoshSeyda/pokemonGym.git
+ * [new branch]      mashal -> mashal
+Mashals-MacBook-Pro:pokemongym Mishi$ git add . 
+Mashals-MacBook-Pro:pokemongym Mishi$ git commit -m "Added new branch mashal"
+On branch mashal
+nothing to commit, working tree clean
+Mashals-MacBook-Pro:pokemongym Mishi$ git status
+On branch mashal
+nothing to commit, working tree clean
+Mashals-MacBook-Pro:pokemongym Mishi$ ls
+index.html	main.js		style.css
+Mashals-MacBook-Pro:pokemongym Mishi$ touch batman.html ashketchum.html
+Mashals-MacBook-Pro:pokemongym Mishi$ git add .
+Mashals-MacBook-Pro:pokemongym Mishi$ git commit -m "Created two trainer links"
+[mashal 0e0c94a] Created two trainer links
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ashketchum.html
+ create mode 100644 batman.html
+Mashals-MacBook-Pro:pokemongym Mishi$ git push -u origin mashal
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 286 bytes | 286.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/JoshSeyda/pokemonGym.git
+   62fa5dc..0e0c94a  mashal -> mashal
+Branch mashal set up to track remote branch mashal from origin.
+Mashals-MacBook-Pro:pokemongym Mishi$ git push -u origin mashal
+Branch mashal set up to track remote branch mashal from origin.
+Everything up-to-date
+Mashals-MacBook-Pro:pokemongym Mishi$ git add . 
+Mashals-MacBook-Pro:pokemongym Mishi$ git commit -m "Added images folder and added pokemon arena image for background"
+[mashal f5a2c6f] Added images folder and added pokemon arena image for background
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .DS_Store
+ create mode 100644 images/.DS_Store
+ create mode 100644 images/pokemon_arena.png
+Mashals-MacBook-Pro:pokemongym Mishi$ git status
+On branch mashal
+Your branch is ahead of 'origin/mashal' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+Mashals-MacBook-Pro:pokemongym Mishi$ git push
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 561.19 KiB | 29.54 MiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/JoshSeyda/pokemonGym.git
+   0e0c94a..f5a2c6f  mashal -> mashal
+Mashals-MacBook-Pro:pokemongym Mishi$ git add . 
+Mashals-MacBook-Pro:pokemongym Mishi$ git commit -m "Added basic html heading, background image using css, and materialize-src files"
+[mashal 229c85f] Added basic html heading, background image using css, and materialize-src files
+ 80 files changed, 35790 insertions(+)
+ create mode 100644 materialize-src/.DS_Store
+ create mode 100644 materialize-src/LICENSE
+ create mode 100644 materialize-src/README.md
+ create mode 100644 materialize-src/css/materialize.css
+ create mode 100644 materialize-src/css/materialize.css.map
+ create mode 100644 materialize-src/js/anime.min.js
+ create mode 100644 materialize-src/js/autocomplete.js
+ create mode 100644 materialize-src/js/bin/materialize.js
+ create mode 100644 materialize-src/js/bin/materialize.min.js
+ create mode 100644 materialize-src/js/buttons.js
+ create mode 100644 materialize-src/js/cards.js
+ create mode 100644 materialize-src/js/carousel.js
+ create mode 100644 materialize-src/js/cash.js
+ create mode 100644 materialize-src/js/characterCounter.js
+ create mode 100644 materialize-src/js/chips.js
+ create mode 100644 materialize-src/js/collapsible.js
+ create mode 100644 materialize-src/js/component.js
+ create mode 100644 materialize-src/js/datepicker.js
+ create mode 100644 materialize-src/js/dropdown.js
+ create mode 100644 materialize-src/js/forms.js
+ create mode 100644 materialize-src/js/global.js
+ create mode 100644 materialize-src/js/materialbox.js
+ create mode 100644 materialize-src/js/modal.js
+ create mode 100644 materialize-src/js/parallax.js
+ create mode 100644 materialize-src/js/pushpin.js
+ create mode 100644 materialize-src/js/range.js
+ create mode 100644 materialize-src/js/scrollspy.js
+ create mode 100644 materialize-src/js/select.js
+ create mode 100644 materialize-src/js/sidenav.js
+ create mode 100644 materialize-src/js/slider.js
+ create mode 100644 materialize-src/js/tabs.js
+ create mode 100644 materialize-src/js/tapTarget.js
+ create mode 100755 materialize-src/js/timepicker.js
+ create mode 100644 materialize-src/js/toasts.js
+ create mode 100644 materialize-src/js/tooltip.js
+ create mode 100644 materialize-src/js/waves.js
+ create mode 100644 materialize-src/sass/.DS_Store
+ create mode 100644 materialize-src/sass/components/_badges.scss
+ create mode 100644 materialize-src/sass/components/_buttons.scss
+ create mode 100644 materialize-src/sass/components/_cards.scss
+ create mode 100644 materialize-src/sass/components/_carousel.scss
+ create mode 100644 materialize-src/sass/components/_chips.scss
+ create mode 100644 materialize-src/sass/components/_collapsible.scss
+ create mode 100644 materialize-src/sass/components/_color-classes.scss
+ create mode 100644 materialize-src/sass/components/_color-variables.scss
+ create mode 100644 materialize-src/sass/components/_datepicker.scss
+ create mode 100644 materialize-src/sass/components/_dropdown.scss
+ create mode 100644 materialize-src/sass/components/_global.scss
+ create mode 100644 materialize-src/sass/components/_grid.scss
+ create mode 100644 materialize-src/sass/components/_icons-material-design.scss
+ create mode 100644 materialize-src/sass/components/_materialbox.scss
+ create mode 100644 materialize-src/sass/components/_modal.scss
+ create mode 100644 materialize-src/sass/components/_navbar.scss
+ create mode 100644 materialize-src/sass/components/_normalize.scss
+ create mode 100644 materialize-src/sass/components/_preloader.scss
+ create mode 100644 materialize-src/sass/components/_pulse.scss
+ create mode 100644 materialize-src/sass/components/_sidenav.scss
+ create mode 100644 materialize-src/sass/components/_slider.scss
+ create mode 100644 materialize-src/sass/components/_table_of_contents.scss
+ create mode 100644 materialize-src/sass/components/_tabs.scss
+ create mode 100644 materialize-src/sass/components/_tapTarget.scss
+ create mode 100644 materialize-src/sass/components/_timepicker.scss
+ create mode 100644 materialize-src/sass/components/_toast.scss
+ create mode 100644 materialize-src/sass/components/_tooltip.scss
+ create mode 100644 materialize-src/sass/components/_transitions.scss
+ create mode 100644 materialize-src/sass/components/_typography.scss
+ create mode 100644 materialize-src/sass/components/_variables.scss
+ create mode 100644 materialize-src/sass/components/_waves.scss
+ create mode 100644 materialize-src/sass/components/forms/_checkboxes.scss
+ create mode 100644 materialize-src/sass/components/forms/_file-input.scss
+ create mode 100644 materialize-src/sass/components/forms/_forms.scss
+ create mode 100644 materialize-src/sass/components/forms/_input-fields.scss
+ create mode 100644 materialize-src/sass/components/forms/_radio-buttons.scss
+ create mode 100644 materialize-src/sass/components/forms/_range.scss
+ create mode 100644 materialize-src/sass/components/forms/_select.scss
+ create mode 100644 materialize-src/sass/components/forms/_switches.scss
+ create mode 100644 materialize-src/sass/materialize.scss
+Mashals-MacBook-Pro:pokemongym Mishi$ git push
+Counting objects: 89, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (89/89), done.
+Writing objects: 100% (89/89), 271.62 KiB | 4.94 MiB/s, done.
+Total 89 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/JoshSeyda/pokemonGym.git
+   f5a2c6f..229c85f  mashal -> mashal
+Mashals-MacBook-Pro:pokemongym Mishi$ git status
+On branch mashal
+Your branch is up-to-date with 'origin/mashal'.
+
+nothing to commit, working tree clean
+Mashals-MacBook-Pro:pokemongym Mishi$ git ls
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+	log
+Mashals-MacBook-Pro:pokemongym Mishi$ ls
+ashketchum.html	images		main.js		style.css
+batman.html	index.html	materialize-src
+Mashals-MacBook-Pro:pokemongym Mishi$ git add . 
+Mashals-MacBook-Pro:pokemongym Mishi$ git commit -m "Added background fixed image to batman/ashketchum.html and empty carousel divs"
+[mashal 6229530] Added background fixed image to batman/ashketchum.html and empty carousel divs
+ 3 files changed, 71 insertions(+), 2 deletions(-)
+Mashals-MacBook-Pro:pokemongym Mishi$ git push
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 868 bytes | 868.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+git stTo https://github.com/JoshSeyda/pokemonGym.git
+   229c85f..6229530  mashal -> mashal
+Mashals-MacBook-Pro:pokemongym Mishi$ git status
+On branch mashal
+Your branch is up-to-date with 'origin/mashal'.
+
+nothing to commit, working tree clean
+Mashals-MacBook-Pro:pokemongym Mishi$ ls
+ashketchum.html	images		main.js		style.css
+batman.html	index.html	materialize-src
+Mashals-MacBook-Pro:pokemongym Mishi$ git add . 
+Mashals-MacBook-Pro:pokemongym Mishi$ git commit -m "Added js and css files for materialize"
+[mashal 18c3f0b] Added js and css files for materialize
+ 12 files changed, 21483 insertions(+), 25 deletions(-)
+ create mode 100644 LICENSE
+ create mode 100644 README.md
+ create mode 100644 css/materialize.css
+ create mode 100644 css/materialize.min.css
+ create mode 100644 css/style.css
+ create mode 100644 css/style.css.map
+ rewrite index.html (98%)
+ create mode 100644 js/.DS_Store
+ create mode 100644 js/materialize.js
+ create mode 100644 js/materialize.min.js
+Mashals-MacBook-Pro:pokemongym Mishi$ git push
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (12/12), 50.06 KiB | 5.56 MiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/JoshSeyda/pokemonGym.git
+   6229530..18c3f0b  mashal -> mashal
+Mashals-MacBook-Pro:pokemongym Mishi$ git status
+On branch mashal
+Your branch is up-to-date with 'origin/mashal'.
+
+nothing to commit, working tree clean
+Mashals-MacBook-Pro:pokemongym Mishi$ ls
+LICENSE		batman.html	index.html	materialize-src
+README.md	css		js		style.css
+ashketchum.html	images		main.js
+Mashals-MacBook-Pro:pokemongym Mishi$ git add . 
+Mashals-MacBook-Pro:pokemongym Mishi$ git commit -m "Added carousel to batman.html"
+[mashal 3e3a317] Added carousel to batman.html
+ 8 files changed, 316 insertions(+), 11 deletions(-)
+ create mode 100755 ash.js
+ create mode 100755 batman.js
+ create mode 100755 images/ash.png
+ create mode 100644 images/batman.png
+Mashals-MacBook-Pro:pokemongym Mishi$ git push
+Counting objects: 15, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (15/15), 454.14 KiB | 28.38 MiB/s, done.
+Total 15 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 6 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/JoshSeyda/celedon-gym.git
+To https://github.com/JoshSeyda/pokemonGym.git
+   18c3f0b..3e3a317  mashal -> mashal
+Mashals-MacBook-Pro:pokemongym Mishi$ ls
+LICENSE		ashketchum.html	css		js		style.css
+README.md	batman.html	images		main.js
+ash.js		batman.js	index.html	materialize-src
+Mashals-MacBook-Pro:pokemongym Mishi$ git status
+On branch mashal
+Your branch is up-to-date with 'origin/mashal'.
+
+nothing to commit, working tree clean
+Mashals-MacBook-Pro:pokemongym Mishi$ git add . 
+Mashals-MacBook-Pro:pokemongym Mishi$ git commit -m "On card open, card now scrolls to show more info and back image on bottom" 
+[mashal 2024cb9] On card open, card now scrolls to show more info and back image on bottom
+ 5 files changed, 11 insertions(+), 8 deletions(-)
+Mashals-MacBook-Pro:pokemongym Mishi$ git push
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 751 bytes | 751.00 KiB/s, done.
+Total 8 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 7 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/JoshSeyda/celedon-gym.git
+To https://github.com/JoshSeyda/pokemonGym.git
+   3e3a317..2024cb9  mashal -> mashal
+Mashals-MacBook-Pro:pokemongym Mishi$ ls
+LICENSE		ashketchum.html	css		js		style.css
+README.md	batman.html	images		main.js
+ash.js		batman.js	index.html	materialize-src
+Mashals-MacBook-Pro:pokemongym Mishi$ git status
+On branch mashal
+Your branch is up-to-date with 'origin/mashal'.
+
+nothing to commit, working tree clean
+Mashals-MacBook-Pro:pokemongym Mishi$ git log --oneline
+2024cb9 (HEAD -> mashal, origin/mashal) On card open, card now scrolls to show more info and back image on bottom
+3e3a317 Added carousel to batman.html
+18c3f0b Added js and css files for materialize
+6229530 Added background fixed image to batman/ashketchum.html and empty carousel divs
+229c85f Added basic html heading, background image using css, and materialize-src files
+f5a2c6f Added images folder and added pokemon arena image for background
+0e0c94a Created two trainer links
+62fa5dc (origin/master, origin/josh, origin/HEAD, master) initialized repo
+Mashals-MacBook-Pro:pokemongym Mishi$ git reset --hard HEAD
+HEAD is now at 2024cb9 On card open, card now scrolls to show more info and back image on bottom
+Mashals-MacBook-Pro:pokemongym Mishi$ ls
+LICENSE		ashketchum.html	css		js		scss
+README.md	batman.html	images		main.js		style.css
+ash.js		batman.js	index.html	materialize-src
+Mashals-MacBook-Pro:pokemongym Mishi$ 

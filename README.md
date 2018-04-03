@@ -1,91 +1,38 @@
-<p align="center">
-  <a href="http://materializecss.com/">
-    <img src="http://materializecss.com/res/materialize.svg" width="150">
-  </a>
+# Pokémon Gym
+### A project to practice GitHub collaboration and implement jQuery Ajax calls on an API with styling using the Materialize library
+### [View Project](https://joshseyda.github.io/celadon-gym/)
+#### The Pokémon API is very slow to load, so please be patient!
+## Motivation
+######  This dynamically generated Page was created in collaboration with Mashal Azhar as a project for our New York Code + Design Academy Web Development bootcamp. We were tasked with accessing an open source Pokémon API, generating a page with that data, implementing ES6 class structure in our JavaScript, utilizing Materialize styling elements, and writing our own stylings with a SASS/SCSS compiler. After submitting individual projects, we paired up to integrate our code, using aspects of each others projects to make a new combined page through GitHub as our medium of exchange. 
+## Build Status
+###### We are currently developing our Minimum Viable Product. 
+## Code Style
+###### We took Mashal's class structure, and Josh's Ajax function to make two nearly identical javascript files,for seperate trainer pages. 
+## Technology Used
+###### JavaScript, jQuery, API's, HTML5, CSS3, Materialize, SCSS, and the amazing GitHub.
+## Features
+ * Dynamically generated collection of Pokémon from the API
+ * Carousel of cards with revealable properties 
+ * Display Relevant information about Pokémon
+## Licence
+##### MIT License
 
-  <h3 align="center">MaterializeCSS</h3>
+###### Copyright &copy; [2018] [Mashal Azhar & Joshua Seyda]
 
-  <p align="center">
-    Materialize, a CSS Framework based on material design.
-    <br>
-    <a href="http://materializecss.com/"><strong>-- Browse the docs --</strong></a>
-    <br>
-    <br>
-    <a href="https://travis-ci.org/Dogfalo/materialize">
-      <img src="https://travis-ci.org/Dogfalo/materialize.svg?branch=master" alt="Travis CI badge">
-    </a>
-    <a href="https://badge.fury.io/js/materialize-css">
-      <img src="https://badge.fury.io/js/materialize-css.svg" alt="npm version badge">
-    </a>
-    <a href="https://cdnjs.com/libraries/materialize">
-      <img src="https://img.shields.io/cdnjs/v/materialize.svg" alt="CDNJS version badge">
-    </a>
-    <a href="https://david-dm.org/Dogfalo/materialize">
-      <img src="https://david-dm.org/Dogfalo/materialize/status.svg" alt="dependencies Status badge">
-      </a>
-    <a href="https://david-dm.org/Dogfalo/materialize#info=devDependencies">
-      <img src="https://david-dm.org/Dogfalo/materialize/dev-status.svg" alt="devDependency Status badge">
-    </a>
-    <a href="https://gitter.im/Dogfalo/materialize">
-      <img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter badge">
-    </a>
-</p>
+###### Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Table of Contents
-- [Quickstart](#quickstart)
-- [Documentation](#documentation)
-- [Supported Browsers](#supported-browsers)
-- [Changelog](#changelog)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [Copyright and license](#copyright-and-license)
+###### The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## Quickstart:
-Read the [getting started guide](http://materializecss.com/getting-started.html) for more information on how to use materialize.
-
-- [Download the latest release](https://github.com/Dogfalo/materialize/releases/latest) of materialize directly from GitHub.
-- Clone the repo: `git clone https://github.com/Dogfalo/materialize.git`
-- Include the files via [cdnjs](https://cdnjs.com/libraries/materialize). More [here](http://materializecss.com/getting-started.html).
-- Install with [npm](https://www.npmjs.com): `npm install materialize-css`
-- Install with [Bower](https://bower.io): `bower install materialize` ([DEPRECATED](https://bower.io/blog/2017/how-to-migrate-away-from-bower/))
-- Install with [Atmosphere](https://atmospherejs.com): `meteor add materialize:materialize`
-
-## Documentation
-The documentation can be found at <http://materializecss.com>. To run the documentation locally on your machine, you need [Node.js](https://nodejs.org/en/) installed on your computer.
-
-### Running documentation locally
-Run these commands to set up the documentation:
-
-```bash
-git clone https://github.com/Dogfalo/materialize
-cd materialize
-npm install
-```
-
-Then run `grunt monitor` to compile the documentation. When it finishes, open a new browser window and navigate to `localhost:8000`. We use [BrowserSync](https://www.browsersync.io/) to display the documentation.
-
-### Documentation for previous releases
-Previous releases and their documentation are available for [download](https://github.com/Dogfalo/materialize/releases).
-
-## Supported Browsers:
-Materialize is compatible with:
-
-- Chrome 35+
-- Firefox 31+
-- Safari 9+
-- Opera
-- Edge
-- IE 11+
-
-## Changelog
-For changelogs, check out [the Releases section of materialize](https://github.com/Dogfalo/materialize/releases) or the [CHANGELOG.md](CHANGELOG.md).
-
-## Testing
-We use Jasmine as our testing framework and we're trying to write a robust test suite for our components. If you want to help, [here's a starting guide on how to write tests in Jasmine](CONTRIBUTING.md#jasmine-testing-guide).
-
-## Contributing
-Check out the [CONTRIBUTING document](CONTRIBUTING.md) in the root of the repository to learn how you can contribute. You can also browse the [help-wanted](https://github.com/Dogfalo/materialize/labels/help-wanted) tag in our issue tracker to find things to do.
-
-## Copyright and license
-Code copyright 2017 Materialize. Code released under the MIT license.
-# mockery_app
+###### THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -121,40 +121,40 @@ function createPokemon(pokemon) {
                     }
                     // Render for initial set of pokemon
                 render();
-                if (counter > 3) {
-                    let index = batman.pokemon.length - 1;
-                    console.log(index);
-                    console.log(futureRef[index]);
-                    let render = function() {
-                            let card = `<div class="carousel-item z-depth-5" href="${futureRef[index]}"><div class="card large">
-                            <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="${batman.pokemon[index].pic}">
-                            </div>
-                            <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">${batman.pokemon[index].name}<i class="material-icons right small">insert_chart</i></span>
-                            </div>
-                            <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">${batman.pokemon[index].name}<i class="material-icons right">close</i></span>
-                            <p>Stats</p> 
-                            <p>${batman.pokemon[index].statsRender()}</p>
-                            <p>Abilities</p>
-                            <p>${batman.pokemon[index].abilitiesRender()}</p>
-                            </div>
-                            </div>
-                            </div>`;
+            }
+            if (counter > 3) {
+                let index = batman.pokemon.length - 1;
+                console.log(index);
+                console.log(futureRef[index]);
+                let render = function() {
+                        let card = `<div class="carousel-item z-depth-5" href="${futureRef[index]}"><div class="card large">
+                        <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="${batman.pokemon[index].pic}">
+                        </div>
+                        <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">${batman.pokemon[index].name}<i class="material-icons right small">insert_chart</i></span>
+                        </div>
+                        <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">${batman.pokemon[index].name}<i class="material-icons right">close</i></span>
+                        <p>Stats</p> 
+                        <p>${batman.pokemon[index].statsRender()}</p>
+                        <p>Abilities</p>
+                        <p>${batman.pokemon[index].abilitiesRender()}</p>
+                        </div>
+                        </div>
+                        </div>`;
 
-                            $('.carousel').append(card);
-                        }
-                        // Render for additional pokemon
-                    render();
-                    // Implementation of carousel functionality
-                    $('.carousel').carousel({
-                        numVisible: batman.pokemon.length
-                    });
-                    let elem = $('.carousel');
-                    let instance = M.Carousel.getInstance(elem);
-                    instance.set(index);
-                }
+                        $('.carousel').append(card);
+                    }
+                    // Render for additional pokemon
+                render();
+                // Implementation of carousel functionality
+                $('.carousel').carousel({
+                    numVisible: batman.pokemon.length
+                });
+                let elem = $('.carousel');
+                let instance = M.Carousel.getInstance(elem);
+                instance.set(index);
             }
         },
         error: function(error) {

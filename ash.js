@@ -122,7 +122,12 @@ function createPokemon(pokemon) {
                     }
                 }
                 render();
-                $('.carousel').carousel();
+                $('.carousel').carousel({
+                    numVisible: ashKetchum.pokemon.length;
+                });
+                let elem = $('.carousel');
+                let instance = M.Carousel.getInstance(elem);
+                instance.set(index);
             }
         },
         error: function(error) {
@@ -133,3 +138,11 @@ function createPokemon(pokemon) {
 createPokemon('nidoking');
 createPokemon('haunter');
 createPokemon('mewtwo');
+$(document).ready(function() {
+    $('form').on('submit', function() {
+        event.preventDefault();
+        let name = $('input[type=search]').val();
+        console.log(name);
+        createPokemon(name);
+    });
+});

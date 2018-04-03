@@ -1,17 +1,23 @@
-html {
-  height: 100%; 
-}
-
 nav {
   color: #fff;
   background-color: red;
-  font-family: Calibri; 
-}
+  font-family: Calibri; }
 
-.white {
-  background-color: blue !important; 
-}
-
-
+.card .card-image img {
+  width: 50%;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */
+
+body{
+    background-image: url(images/pokemon_arena.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+html{
+	height:100%;
+}

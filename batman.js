@@ -43,7 +43,7 @@ let counter = 0;
 function createPokemon(pokemon) {
     console.log('ajax');
     $.ajax({
-        url: `https://pokeapi.co/api/v2/pokemon/${pokemon}/`,
+        url: `http://pokeapi.salestock.net/api/v2/pokemon/${pokemon}/`,
         type: "GET",
         dataType: "JSON",
         success: function(data) {

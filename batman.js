@@ -130,7 +130,7 @@ function createPokemon(pokemon) {
                 let render = function() {
                         let card = `<div class="carousel-item z-depth-5" href="${futureRef[index]}"><div class="card large">
                         <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="${batman.pokemon[index].pic}">
+                        <img class="activator" src="${batman.pokemon[index].frontImage}">
                         </div>
                         <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">${batman.pokemon[index].name}<i class="material-icons right small">insert_chart</i></span>
@@ -141,6 +141,9 @@ function createPokemon(pokemon) {
                         <p>hp: ${batman.pokemon[index].stats.hp} <br> attack: ${batman.pokemon[index].stats.attck} <br> defense: ${batman.pokemon[index].stats.dfns} <br> speed: ${batman.pokemon[index].stats.spd} <br></p>
                         <p>Abilities</p>
                          <p>${batman.pokemon[index].abilities.join(", ")}</p>
+                         <div>
+                            <img src="${batman.pokemon[index].backImage}">
+                          </div>
                         </div>
                         </div>
                         </div>`;

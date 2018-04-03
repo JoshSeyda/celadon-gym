@@ -129,7 +129,7 @@ function createPokemon(pokemon) {
                 let render = function() {
                         let card = `<div class="carousel-item z-depth-5" href="${futureRef[index]}"><div class="card large">
                         <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="${ashKetchum.pokemon[index].pic}">
+                        <img class="activator" src="${ashKetchum.pokemon[index].frontImage}">
                         </div>
                         <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">${ashKetchum.pokemon[index].name}<i class="material-icons right small">insert_chart</i></span>
@@ -140,6 +140,9 @@ function createPokemon(pokemon) {
                         <p>hp: ${ashKetchum.pokemon[index].stats.hp} <br> attack: ${ashKetchum.pokemon[index].stats.attck} <br> defense: ${ashKetchum.pokemon[index].stats.dfns} <br> speed: ${ashKetchum.pokemon[index].stats.spd} <br></p>
                         <p>Abilities</p>
                         <p>${ashKetchum.pokemon[index].abilities.join(", ")}</p>
+                        <div>
+                            <img src="${ashKetchum.pokemon[index].backImage}">
+                          </div>
                         </div>
                         </div>
                         </div>`;

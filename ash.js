@@ -137,9 +137,9 @@ function createPokemon(pokemon) {
                         <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">${ashKetchum.pokemon[index].name}<i class="material-icons right">close</i></span>
                         <p>Stats</p> 
-                        <p>${ashKetchum.pokemon[index].statsRender()}</p>
+                        <p>hp: ${ashKetchum.pokemon[index].stats.hp} <br> attack: ${ashKetchum.pokemon[index].stats.attck} <br> defense: ${ashKetchum.pokemon[index].stats.dfns} <br> speed: ${ashKetchum.pokemon[index].stats.spd} <br></p>
                         <p>Abilities</p>
-                        <p>${ashKetchum.pokemon[index].abilitiesRender()}</p>
+                        <p>${ashKetchum.pokemon[index].abilities.join(", ")}</p>
                         </div>
                         </div>
                         </div>`;

@@ -138,9 +138,9 @@ function createPokemon(pokemon) {
                         <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">${batman.pokemon[index].name}<i class="material-icons right">close</i></span>
                         <p>Stats</p> 
-                        <p>${batman.pokemon[index].statsRender()}</p>
+                        <p>hp: ${batman.pokemon[index].stats.hp} <br> attack: ${batman.pokemon[index].stats.attck} <br> defense: ${batman.pokemon[index].stats.dfns} <br> speed: ${batman.pokemon[index].stats.spd} <br></p>
                         <p>Abilities</p>
-                        <p>${batman.pokemon[index].abilitiesRender()}</p>
+                         <p>${batman.pokemon[index].abilities.join(", ")}</p>
                         </div>
                         </div>
                         </div>`;

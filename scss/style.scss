@@ -1,11 +1,10 @@
-nav {
-    color: #fff;
-    background-color: red;
-    font-family: Calibri;
-}
-
-body{
-	
+body {
+    background-image: url(images/pokemon_arena.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
 
 .card {
@@ -16,3 +15,16 @@ body{
 			} 
 		}
 	}
+
+nav {
+    padding-right: 5%;
+    form {
+        width: 25%;
+        margin-right: 0;
+    }
+    a {
+        .right {
+            margin-right: 10%;
+        }
+    }
+}

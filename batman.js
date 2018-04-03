@@ -86,18 +86,18 @@ function createPokemon(pokemon) {
                 batman.allPokemon();
                 console.log(batman);
                 let render = function() {
-                    // For loop to set href to carousel-items
-                    for (let i = 0; i < batman.pokemon.length; i++) {
-                        let reference;
-                        if (i === 0) {
-                            reference = futureRef[i];
-                        } else if (i === 1) {
-                            reference = futureRef[i];
-                        } else if (i === 2) {
-                            reference = futureRef[i];
-                        } else {};
-                        // creation of html card for carousel 
-                        let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card">
+                        // For loop to set href to carousel-items
+                        for (let i = 0; i < batman.pokemon.length; i++) {
+                            let reference;
+                            if (i === 0) {
+                                reference = futureRef[i];
+                            } else if (i === 1) {
+                                reference = futureRef[i];
+                            } else if (i === 2) {
+                                reference = futureRef[i];
+                            } else {};
+                            // creation of html card for carousel 
+                            let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card">
 						    <div class="card-image waves-effect waves-block waves-light">
 						    <img class="activator" src="${batman.pokemon[i].frontImage}">
 						    </div>
@@ -115,18 +115,46 @@ function createPokemon(pokemon) {
                             </div>
 						    </div>
 					        </div>
-					    </div>`;
-                        $('.carousel').append(card);
+					        </div>`;
+                            $('.carousel').append(card);
+                        }
                     }
-                }
+                    // Render for initial set of pokemon
                 render();
-                // Implementation of carousel functionality
-                $('.carousel').carousel({
-                    numVisible: batman.pokemon.length
-                });
-                let elem = $('.carousel');
-                let instance = M.Carousel.getInstance(elem);
-                instance.set(index);
+                if (counter > 3) {
+                    let index = batman.pokemon.length - 1;
+                    console.log(index);
+                    console.log(futureRef[index]);
+                    let render = function() {
+                            let card = `<div class="carousel-item z-depth-5" href="${futureRef[index]}"><div class="card large">
+                            <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="${batman.pokemon[index].pic}">
+                            </div>
+                            <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">${batman.pokemon[index].name}<i class="material-icons right small">insert_chart</i></span>
+                            </div>
+                            <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">${batman.pokemon[index].name}<i class="material-icons right">close</i></span>
+                            <p>Stats</p> 
+                            <p>${batman.pokemon[index].statsRender()}</p>
+                            <p>Abilities</p>
+                            <p>${batman.pokemon[index].abilitiesRender()}</p>
+                            </div>
+                            </div>
+                            </div>`;
+
+                            $('.carousel').append(card);
+                        }
+                        // Render for additional pokemon
+                    render();
+                    // Implementation of carousel functionality
+                    $('.carousel').carousel({
+                        numVisible: batman.pokemon.length
+                    });
+                    let elem = $('.carousel');
+                    let instance = M.Carousel.getInstance(elem);
+                    instance.set(index);
+                }
             }
         },
         error: function(error) {

@@ -97,7 +97,7 @@ function createPokemon(pokemon) {
                         } else if (i === 2) {
                             reference = futureRef[i];
                         } else {};
-                        let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card large">
+                        let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card">
 						<div class="card-image waves-effect waves-block waves-light">
 						  <img class="activator" src="${ashKetchum.pokemon[i].frontImage}">
 						</div>
@@ -122,7 +122,12 @@ function createPokemon(pokemon) {
                     }
                 }
                 render();
-                $('.carousel').carousel();
+                $('.carousel').carousel({
+                    numVisible: ashKetchum.pokemon.length;
+                });
+                let elem = $('.carousel');
+                let instance = M.Carousel.getInstance(elem);
+                instance.set(index);
             }
         },
         error: function(error) {
@@ -133,3 +138,11 @@ function createPokemon(pokemon) {
 createPokemon('nidoking');
 createPokemon('haunter');
 createPokemon('mewtwo');
+$(document).ready(function() {
+    $('form').on('submit', function() {
+        event.preventDefault();
+        let name = $('input[type=search]').val();
+        console.log(name);
+        createPokemon(name);
+    });
+});

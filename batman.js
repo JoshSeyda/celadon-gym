@@ -89,6 +89,7 @@ function createPokemon(pokemon) {
                 batman.allPokemon();
                 console.log(batman);
                 let render = function() {
+                    // for loop to set href for carousel
                     for (let i = 0; i < batman.pokemon.length; i++) {
                         let reference;
                         if (i === 0) {
@@ -98,31 +99,33 @@ function createPokemon(pokemon) {
                         } else if (i === 2) {
                             reference = futureRef[i];
                         } else {};
+                        // creation of html card for carousel 
                         let card = `<div class="carousel-item z-depth-5" href="${reference}"><div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="${batman.pokemon[i].frontImage}">
-						</div>
-						<div class="card-content">
-						  <span class="card-title activator grey-text text-darken-4">${batman.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
-						</div>
-						<div class="card-reveal">
-						  <span class="card-title grey-text text-darken-4">${batman.pokemon[i].name}<i class="material-icons right">close</i></span>
+						    <div class="card-image waves-effect waves-block waves-light">
+						    <img class="activator" src="${batman.pokemon[i].frontImage}">
+						    </div>
+						    <div class="card-content">
+						    <span class="card-title activator grey-text text-darken-4">${batman.pokemon[i].name}<i class="material-icons right small">insert_chart</i></span>
+						    </div>
+						    <div class="card-reveal">
+						    <span class="card-title grey-text text-darken-4">${batman.pokemon[i].name}<i class="material-icons right">close</i></span>
 						 	<p>Stats</p> 
-                          <p>hp: ${batman.pokemon[i].stats.hp} <br> attack: ${batman.pokemon[i].stats.attck} <br> defense: ${batman.pokemon[i].stats.dfns} <br> speed: ${batman.pokemon[i].stats.spd} <br></p>
-						  <p>Abilities</p>
-                          <p>${batman.pokemon[i].abilities.join(", ")}</p>
-                          <div>
-                          <img src="${batman.pokemon[i].backImage}">
-                          </div>
-						</div>
-					  </div>
-					  </div>`;
+                            <p>hp: ${batman.pokemon[i].stats.hp} <br> attack: ${batman.pokemon[i].stats.attck} <br> defense: ${batman.pokemon[i].stats.dfns} <br> speed: ${batman.pokemon[i].stats.spd} <br></p>
+						    <p>Abilities</p>
+                             <p>${batman.pokemon[i].abilities.join(", ")}</p>
+                             <div>
+                            <img src="${batman.pokemon[i].backImage}">
+                            </div>
+						    </div>
+					        </div>
+					    </div>`;
                         $('.carousel').append(card);
                     }
                 }
                 render();
+                // implementation of carousel functionality
                 $('.carousel').carousel({
-                    numVisible: batman.pokemon.length;
+                    numVisible: batman.pokemon.length
                 });
                 let elem = $('.carousel');
                 let instance = M.Carousel.getInstance(elem);

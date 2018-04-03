@@ -1,5 +1,5 @@
 # Pokémon Gym
-### A project to practice GitHub collaboration and implement jQuery Ajax calls on an API with styling using the Materialize library.
+### A project to practice GitHub collaboration and implement jQuery Ajax calls on an API with styling using the Materialize library
 ### [View Project](https://joshseyda.github.io/celadon-gym/)
 #### The Pokémon API is very slow to load, so please be patient!
 ## Motivation

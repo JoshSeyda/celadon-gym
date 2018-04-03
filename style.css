@@ -10,3 +10,13 @@ body{
 html{
 	height:100%;
 }
+
+nav {
+  padding-right: 5%; }
+  nav form {
+    width: 25%;
+    margin-right: 0; }
+  nav a .right {
+    margin-right: 10%; }
+
+    
